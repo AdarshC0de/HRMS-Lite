@@ -9,7 +9,7 @@ export default function EmployeeForm( {onEmployeeAdded} ) {
         setForm( {...form, [e.target.name]: e.target.value} );
     }
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         try{
             await api.post("/employees", form);
