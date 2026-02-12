@@ -1,4 +1,5 @@
 import { useState } from "react";
+import api from "../api/axios";
 
 
 export default function EmployeeForm( {onEmployeeAdded} ) {
@@ -11,6 +12,7 @@ export default function EmployeeForm( {onEmployeeAdded} ) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log("Submitting form", form);
         try{
             await api.post("/employees", form);
             setForm({employeeId: "",fullName: "",email: "",department: ""});
